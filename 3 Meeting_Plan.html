@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meeting Plan | Meeting Prodigy</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/meeting-plan.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Fixed Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo"><i class="fas fa-brain"></i> Meeting Prodigy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Meeting_Setup.html">Setup</a></li>
+          <li><a class="active" href="#">Plan</a></li>
+          <li><a href="#login">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Meeting Plan Header -->
+    <header class="plan-header">
+      <div class="container">
+        <div class="header-content">
+          <h1>Acme Corp Q3 Review Meeting Plan</h1>
+          <div class="plan-meta">
+            <span
+              ><i class="fas fa-calendar-alt"></i> 15 May 2023 |
+              10:00-12:00</span
+            >
+            <span><i class="fas fa-map-marker-alt"></i> Conference Room A</span>
+            <span class="ai-rating">
+              <span class="rating-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </span>
+              AI Confidence: 84%
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Plan Content -->
+    <main class="plan-container">
+      <div class="container">
+        <!-- 1. Strategic Overview -->
+        <section class="plan-section">
+          <div class="section-header">
+            <h2><i class="fas fa-chess-queen"></i> Strategic Overview</h2>
+            <div class="status-indicator status-yellow">
+              <i class="fas fa-exclamation-circle"></i> Needs Refinement
+            </div>
+          </div>
+
+          <div class="section-grid">
+            <div class="form-group">
+              <label>Meeting Objective</label>
+              <div class="editable-field" contenteditable="true">
+                Align stakeholders on Q3 results and secure approval for Q4
+                marketing budget increase
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Success Criteria</label>
+              <ul class="editable-list">
+                <li contenteditable="true">Signed budget approval document</li>
+                <li contenteditable="true">
+                  Verbal commitment from 3/5 stakeholders
+                </li>
+                <li contenteditable="true" class="new-item">+ Add criterion</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Meeting Agenda -->
+        <section class="plan-section">
+          <div class="section-header">
+            <h2><i class="fas fa-list-ol"></i> Meeting Agenda</h2>
+            <div class="status-indicator status-green">
+              <i class="fas fa-check-circle"></i> Optimal
+            </div>
+          </div>
+
+          <div class="professional-table">
+            <div class="table-header">
+              <div class="time-col">Time</div>
+              <div class="topic-col">Topic</div>
+              <div class="owner-col">Owner</div>
+              <div class="points-col">Key Points</div>
+            </div>
+            <div class="table-row">
+              <div class="time-col">10:00-10:15</div>
+              <div class="topic-col">Opening & Objectives</div>
+              <div class="owner-col">Sarah (CEO)</div>
+              <div class="points-col">Set positive tone, align on goals</div>
+            </div>
+            <div class="table-row">
+              <div class="time-col">10:15-10:45</div>
+              <div class="topic-col">Q3 Results Review</div>
+              <div class="owner-col">Mark (Finance)</div>
+              <div class="points-col">
+                Focus on ROI metrics, growth highlights
+              </div>
+            </div>
+            <div class="table-row">
+              <div class="time-col">10:45-11:30</div>
+              <div class="topic-col">Q4 Budget Proposal</div>
+              <div class="owner-col">Lisa (Marketing)</div>
+              <div class="points-col">Present cost/benefit analysis</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Key Messages -->
+        <section class="plan-section">
+          <div class="section-header">
+            <h2><i class="fas fa-bullhorn"></i> Key Messages</h2>
+            <div class="status-indicator status-green">
+              <i class="fas fa-check-circle"></i> Strong
+            </div>
+          </div>
+
+          <div class="messages-table">
+            <div class="table-header">
+              <div class="message-col">Key Message</div>
+              <div class="support-col">Supporting Arguments</div>
+            </div>
+            <div class="table-row">
+              <div class="message-col">Q3 growth exceeded targets by 12%</div>
+              <div class="support-col">
+                <ul class="supporting-arguments">
+                  <li>Revenue increase from $2.4M to $2.7M</li>
+                  <li>38 new enterprise clients</li>
+                </ul>
+              </div>
+            </div>
+            <div class="table-row">
+              <div class="message-col">
+                Budget increase will drive 30% more leads
+              </div>
+              <div class="support-col">
+                <ul class="supporting-arguments">
+                  <li>Historical data shows 1:5 ROI</li>
+                  <li>Competitors investing 20% more</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Psychological Strategy -->
+        <section class="plan-section">
+          <div class="section-header">
+            <h2><i class="fas fa-chess"></i> Psychological Strategy</h2>
+            <div class="status-indicator status-yellow">
+              <i class="fas fa-exclamation-circle"></i> Partial
+            </div>
+          </div>
+
+          <div class="strategy-content">
+            <div class="form-group">
+              <label>Opening Strategy</label>
+              <div class="editable-field" contenteditable="true">
+                Start with success stories to create positive momentum before
+                discussing budget needs
+              </div>
+            </div>
+
+            <div class="objection-table">
+              <div class="table-header">
+                <div class="person-col">Person</div>
+                <div class="objection-col">Expected Objection</div>
+                <div class="response-col">Response</div>
+              </div>
+              <div class="table-row">
+                <div class="person-col">CFO</div>
+                <div class="objection-col">Cost too high</div>
+                <div class="response-col">
+                  Show ROI projections and phased approach
+                </div>
+              </div>
+              <div class="table-row">
+                <div class="person-col">Operations</div>
+                <div class="objection-col">Implementation capacity</div>
+                <div class="response-col">
+                  Highlight existing team bandwidth
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Roles and Responsibilities -->
+        <section class="plan-section">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-user-friends"></i> Roles and Responsibilities
+            </h2>
+            <div class="status-indicator status-green">
+              <i class="fas fa-check-circle"></i> Clear
+            </div>
+          </div>
+
+          <div class="roles-table">
+            <div class="table-header">
+              <div class="name-col">Name</div>
+              <div class="title-col">Title</div>
+              <div class="role-col">Primary Responsibility</div>
+              <div class="backup-col">Backup</div>
+            </div>
+            <div class="table-row">
+              <div class="name-col">Sarah Lim</div>
+              <div class="title-col">CEO</div>
+              <div class="role-col">Final decision maker</div>
+              <div class="backup-col">Mark Chen</div>
+            </div>
+            <div class="table-row">
+              <div class="name-col">Mark Chen</div>
+              <div class="title-col">CFO</div>
+              <div class="role-col">Financial approvals</div>
+              <div class="backup-col">Lisa Wang</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Group Dynamics -->
+        <section class="plan-section">
+          <div class="section-header">
+            <h2><i class="fas fa-people-arrows"></i> Group Dynamics</h2>
+            <div class="status-indicator status-yellow">
+              <i class="fas fa-exclamation-circle"></i> Needs Review
+            </div>
+          </div>
+
+          <div class="section-grid">
+            <div class="form-group full-width">
+              <label>Internal Dynamics Summary</label>
+              <div class="editable-field" contenteditable="true">
+                CFO is budget-conscious but respects data. Marketing director is
+                ally but needs social proof. Operations team concerned about
+                implementation capacity.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. Risk & Contingency Plan -->
+        <section class="plan-section">
+          <div class="section-header">
+            <h2>
+              <i class="fas fa-exclamation-triangle"></i> Risk & Contingency
+              Plan
+            </h2>
+            <div class="status-indicator status-green">
+              <i class="fas fa-check-circle"></i> Thorough
+            </div>
+          </div>
+
+          <div class="risk-table">
+            <div class="table-header">
+              <div class="risk-col">Identified Risk</div>
+              <div class="contingency-col">Contingency Plan</div>
+            </div>
+            <div class="table-row">
+              <div class="risk-col">Key stakeholder unavailable</div>
+              <div class="contingency-col">Reschedule decision items</div>
+            </div>
+            <div class="table-row">
+              <div class="risk-col">Technical issues with demo</div>
+              <div class="contingency-col">Have backup screenshots ready</div>
+            </div>
+            <div class="table-row">
+              <div class="risk-col">Budget approval delayed</div>
+              <div class="contingency-col">
+                Propose interim solution with 50% allocation
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Final Actions -->
+        <div class="final-actions">
+          <button class="btn btn-primary btn-large">
+            <i class="fas fa-check-double"></i> Finalize Meeting Plan
+          </button>
+          <div class="secondary-actions">
+            <button class="btn btn-outline" disabled>
+              <i class="fas fa-file-pdf"></i> Export to PDF
+            </button>
+            <span class="helper-text">Available in Pro version</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/meeting-plan.js"></script>
+  </body>
+</html>

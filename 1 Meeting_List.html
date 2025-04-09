@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mötesöversikt | Meeting Prodigy</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/meeting-list.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="js/meeting-list.js" defer></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo"><i class="fas fa-brain"></i> Meeting Prodigy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Meeting_Setup.html">Setup</a></li>
+          <li><a href="Meeting_Plan.html">Plan</a></li>
+          <li><a href="#">Control</a></li>
+          <li><a href="Meeting_Report.html">Report</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="plan-header">
+      <div class="container">
+        <div class="header-content">
+          <h1>Dina Möten</h1>
+          <div class="plan-meta">
+            <button class="btn btn-primary">
+              <i class="fas fa-plus"></i> Nytt möte
+            </button>
+            <button class="btn btn-outline">
+              <i class="fas fa-file-alt"></i> Ny ad-hoc rapport
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="plan-container">
+      <div class="container">
+        <div class="filter-bar">
+          <label>
+            <input type="checkbox" id="hideArchived" /> Dölj arkiverade möten
+          </label>
+          <select>
+            <option selected>Status: Alla</option>
+            <option>Setup draft</option>
+            <option>Setup finalized</option>
+            <option>Plan draft</option>
+            <option>Plan finalized</option>
+            <option>In progress</option>
+            <option>Meeting done</option>
+            <option>Report draft</option>
+            <option>Report finalized</option>
+          </select>
+        </div>
+
+        <div class="meeting-list">
+          <!-- EXEMPEL -->
+          <div class="meeting-card" data-status="Setup draft">
+            <h2>
+              <span style="color: var(--text-light); font-weight: 500"
+                >Initial Planning</span
+              >
+              – <strong>Client A</strong>
+            </h2>
+            <p><strong>Datum:</strong> 2025-04-05</p>
+            <p>
+              <strong>Status:</strong>
+              <span class="status-tag">Setup draft</span>
+            </p>
+            <div class="actions">
+              <a href="#" class="btn btn-primary"
+                ><i class="fas fa-edit"></i> Edit Setup</a
+              >
+              <a href="#" class="btn btn-outline"
+                ><i class="fas fa-user-plus"></i> Invite colleague</a
+              >
+            </div>
+          </div>
+
+          <div class="meeting-card" data-status="Setup finalized">
+            <h2>
+              <span style="color: var(--text-light); font-weight: 500"
+                >Intro Call</span
+              >
+              – <strong>Partner Org</strong>
+            </h2>
+            <p><strong>Datum:</strong> 2025-04-10</p>
+            <p>
+              <strong>Status:</strong>
+              <span class="status-tag">Setup finalized</span>
+            </p>
+            <div class="actions">
+              <a href="#" class="btn btn-primary"
+                ><i class="fas fa-edit"></i> Edit Setup</a
+              >
+              <a href="#" class="btn btn-primary"
+                ><i class="fas fa-magic"></i> Generate plan</a
+              >
+              <a href="#" class="btn btn-outline"
+                ><i class="fas fa-user-plus"></i> Invite colleague</a
+              >
+            </div>
+          </div>
+
+          <div class="meeting-card" data-status="Plan draft">
+            <h2>
+              <span style="color: var(--text-light); font-weight: 500"
+                >Sales Strategy</span
+              >
+              – <strong>Europe</strong>
+            </h2>
+            <p><strong>Datum:</strong> 2025-04-15</p>
+            <p>
+              <strong>Status:</strong>
+              <span class="status-tag">Plan draft</span>
+            </p>
+            <div class="actions">
+              <a href="#" class="btn btn-primary"
+                ><i class="fas fa-edit"></i> Edit plan</a
+              >
+              <a href="#" class="btn btn-outline"
+                ><i class="fas fa-user-plus"></i> Invite colleague</a
+              >
+            </div>
+          </div>
+
+          <div class="meeting-card" data-status="Plan finalized">
+            <h2>
+              <span style="color: var(--text-light); font-weight: 500"
+                >Quarterly Review</span
+              >
+              – <strong>Acme Corp</strong>
+            </h2>
+            <p><strong>Datum:</strong> 2025-04-20</p>
+            <p>
+              <strong>Status:</strong>
+              <span class="status-tag">Plan finalized</span>
+            </p>
+            <div class="actions">
+              <a href="#" class="btn btn-primary"
+                ><i class="fas fa-edit"></i> Edit plan</a
+              >
+              <a href="#" class="btn btn-outline"
+                ><i class="fas fa-user-plus"></i> Invite colleague</a
+              >
+              <a href="#" class="btn btn-outline"
+                ><i class="fas fa-share-alt"></i> Share meeting plan</a
+              >
+            </div>
+          </div>
+
+          <div class="meeting-card" data-status="In progress">
+            <h2>
+              <span style="color: var(--text-light); font-weight: 500"
+                >Live Deal Discussion</span
+              >
+              – <strong>Beta Inc</strong>
+            </h2>
+            <p><strong>Datum:</strong> 2025-04-25</p>
+            <p>
+              <strong>Status:</strong>
+              <span class="status-tag">In progress</span>
+            </p>
+            <div class="actions">
+              <a href="#" class="btn btn-primary"
+                ><i class="fas fa-play-circle"></i> Start meeting</a
+              >
+              <a href="#" class="btn btn-outline"
+                ><i class="fas fa-user-plus"></i> Invite colleague</a
+              >
+            </div>
+          </div>
+
+          <div class="meeting-card" data-status="Meeting done">
+            <h2>
+              <span style="color: var(--text-light); font-weight: 500"
+                >Contract Review</span
+              >
+              – <strong>New Prospect</strong>
+            </h2>
+            <p><strong>Datum:</strong> 2025-04-26</p>
+            <p>
+              <strong>Status:</strong>
+              <span class="status-tag">Meeting done</span>
+            </p>
+            <div class="actions">
+              <a href="#" class="btn btn-primary"
+                ><i class="fas fa-pen"></i> Generate report</a
+              >
+            </div>
+          </div>
+
+          <div class="meeting-card" data-status="Report draft">
+            <h2>
+              <span style="color: var(--text-light); font-weight: 500"
+                >Retrospective</span
+              >
+              – <strong>Client Gamma</strong>
+            </h2>
+            <p><strong>Datum:</strong> 2025-04-02</p>
+            <p>
+              <strong>Status:</strong>
+              <span class="status-tag">Report draft</span>
+            </p>
+            <div class="actions">
+              <a href="#" class="btn btn-primary"
+                ><i class="fas fa-edit"></i> Edit report</a
+              >
+            </div>
+          </div>
+
+          <div class="meeting-card" data-status="Report finalized">
+            <h2>
+              <span style="color: var(--text-light); font-weight: 500"
+                >Postmortem</span
+              >
+              – <strong>Project Delta</strong>
+            </h2>
+            <p><strong>Datum:</strong> 2025-03-15</p>
+            <p>
+              <strong>Status:</strong>
+              <span class="status-tag">Report finalized</span>
+            </p>
+            <div class="actions">
+              <a href="#" class="btn btn-outline"
+                ><i class="fas fa-eye"></i> View report</a
+              >
+              <a href="#" class="btn btn-outline"
+                ><i class="fas fa-share-alt"></i> Share meeting report</a
+              >
+              <a href="#" class="btn btn-outline"
+                ><i class="fas fa-globe"></i> Share externally</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

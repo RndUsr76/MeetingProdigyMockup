@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meeting Control | Meeting Prodigy</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/meeting-control.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo"><i class="fas fa-brain"></i> Meeting Prodigy</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Meeting_Setup.html">Setup</a></li>
+          <li><a href="Meeting_Plan.html">Plan</a></li>
+          <li><a class="active" href="#">Control</a></li>
+          <li><a href="Meeting_Report.html">Report</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="control-container">
+      <div class="container">
+        <h1 class="page-title">Meeting Control</h1>
+
+        <div class="layout-grid">
+          <div class="main-panel">
+            <div class="tab-header">
+              <button class="tab-button active" onclick="switchTab('notes')">
+                Meeting Notes
+              </button>
+              <button class="tab-button" onclick="switchTab('chat')">
+                LLM Chat
+              </button>
+            </div>
+
+            <div class="tab-content" id="notes" style="display: block">
+              <div class="notes-history">
+                <div class="note-entry">
+                  <strong>Anna:</strong> Shared the suggested outcome of the
+                  meeting and the participants agreed that this what they are
+                  aiming for too.
+                </div>
+                <div class="note-entry">
+                  <strong>Johan:</strong> We clarified that timeline is tough to
+                  meet but we are committed and agrees to deliver on it.
+                </div>
+                <div class="note-entry">
+                  <strong>Mei:</strong> Rick:
+                  <i
+                    >We need feature B and C, otherwise this is not really what
+                    we need</i
+                  >
+                </div>
+                <div class="note-entry">
+                  <strong>Johan:</strong> Anna clarified again that our
+                  understanding from earlier discussions was that the timeline
+                  was the most critical aspect and that we in previous meetings
+                  have scaled down the scope to make sure we will meet this
+                  timeline and asked if that has changed.
+                </div>
+                <div class="note-entry">
+                  <strong>Mei:</strong> Asked if we can have a two-step
+                  delivery. First version with scope and timeline as we have
+                  talked about before and a secion delivry with these new
+                  features.
+                </div>
+              </div>
+              <textarea
+                rows="3"
+                placeholder="Write your meeting note..."
+              ></textarea>
+              <button class="btn btn-primary">Submit Note</button>
+            </div>
+
+            <div class="tab-content" id="chat" style="display: none">
+              <div class="chat-box">
+                <div class="chat-messages">
+                  <div class="chat-message user">
+                    <b>User:</b> Rick is adding more and more features which
+                    will push the deadline. He does not seem to be in picture of
+                    what we have already agreed to. What shall we do?
+                  </div>
+                  <div class="chat-message">
+                    <b>AI:</b> Tell him that you absolutely can include these
+                    features but this extra scope will push the deadline and
+                    that your understanding is that the deadline is
+                    non-negotiable. Is there a way to split the delivery in two:
+                    first a version with that includes the original content and
+                    that will be delivered on the agreed deadline and then an
+                    update some time later with the features he is asking for
+                  </div>
+                </div>
+                <div class="chat-input">
+                  <input type="text" placeholder="Type a message..." />
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-box">
+              <strong>AI Insight:</strong>
+              <p>
+                You are drifting away from the goal of agreeing on the scope of
+                the project. Adding more features to the scope seems to push he
+                deadline which is not acceptable.
+              </p>
+            </div>
+          </div>
+
+          <aside class="sidebar">
+            <div class="status-box">
+              <div class="status-header">
+                <span class="status-light yellow"></span>
+                <span class="status-label">Goal Status: At Risk</span>
+              </div>
+              <details>
+                <summary>Goal Details</summary>
+                <p>
+                  The goal of the meeting is to formally agree on the scope,
+                  timeline and cost of the project so that contract drafting can
+                  start.
+                </p>
+              </details>
+            </div>
+
+            <div class="status-box">
+              <div class="status-header">
+                <span class="status-light green"></span>
+                <span class="status-label">Agenda: On Track</span>
+              </div>
+              <details>
+                <summary>Agenda</summary>
+                <ul>
+                  <li>Introduction</li>
+                  <li>Proposal Overview</li>
+                  <li>Discussion</li>
+                  <li>Decision Points</li>
+                </ul>
+              </details>
+            </div>
+
+            <div class="status-box">
+              <details>
+                <summary>Participant Status</summary>
+                <ul>
+                  <li>Louis – Focused</li>
+                  <li>
+                    Adam – Distracted
+                    <span
+                      class="alert-icon"
+                      title="Adam has not contributed much to the meeting. Get him engaged by asking him an open question about his area (product performance, robustness)"
+                      >⚠️</span
+                    >
+                  </li>
+                  <li>Rick – Engaged</li>
+                </ul>
+              </details>
+            </div>
+
+            <div class="status-box">
+              <details>
+                <summary>Team Chat</summary>
+                <ul>
+                  <li>
+                    <strong>Anna:</strong> Why is Rick asking for this now? We
+                    agreed that this is not part of the MVP...
+                  </li>
+                  <li>
+                    <strong>Mei:</strong> It seems he has not been fully briefed
+                    by the others...
+                  </li>
+                  <li>
+                    <strong>Johan:</strong> IF we would do what Rick is asking
+                    for, how long would that take approx?
+                  </li>
+                  <li><strong>Mei:</strong> 6 mths perhaps</li>
+                </ul>
+              </details>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/meeting-control.js"></script>
+  </body>
+</html>
