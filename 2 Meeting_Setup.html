@@ -4,17 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meeting Setup | Meeting Prodigy</title>
-    <head>
-      <link rel="stylesheet" href="css/main.css" />
-      <link rel="stylesheet" href="css/meeting-setup.css" />
-    </head>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/meeting-setup.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
-    <!-- Fixed Navbar -->
     <nav class="navbar">
       <div class="container">
         <div class="logo">Meeting Prodigy</div>
@@ -25,7 +22,6 @@
       </div>
     </nav>
 
-    <!-- Page Header -->
     <header class="setup-header">
       <div class="container">
         <h1>Meeting Setup</h1>
@@ -35,7 +31,6 @@
       </div>
     </header>
 
-    <!-- Lägg till detta efter <header> men före <main> -->
     <section class="voice-input-section">
       <div class="container">
         <div class="voice-toggle">
@@ -43,7 +38,11 @@
             <button class="toggle-option active" data-input-type="manual">
               <i class="fas fa-keyboard"></i> Manuell inmatning
             </button>
-            <button class="toggle-option" data-input-type="voice">
+            <button
+              class="toggle-option"
+              data-input-type="voice"
+              onclick="openVoiceRecording()"
+            >
               <i class="fas fa-microphone"></i> Rösttranskribering
             </button>
           </div>
@@ -55,31 +54,12 @@
             </p>
           </div>
         </div>
-
-        <!-- Röstinspelningskontroller (dolda som standard) -->
-        <div class="voice-controls" id="voiceControls">
-          <div class="voice-status">
-            <div class="pulse-animation">
-              <i class="fas fa-microphone"></i>
-            </div>
-            <span id="statusText">Klicka för att börja inspelning</span>
-          </div>
-          <button class="btn btn-primary" id="startRecording">
-            <i class="fas fa-microphone"></i> Starta inspelning
-          </button>
-          <div class="voice-timer">
-            <i class="fas fa-clock"></i>
-            <span id="recordingTimer">00:00</span>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- Main Form Content -->
     <main class="setup-container">
       <div class="container">
         <form class="meeting-form">
-          <!-- Section 1: General Information -->
           <section class="form-section">
             <div class="section-header">
               <div class="step-number">1</div>
@@ -87,11 +67,7 @@
             </div>
             <div class="form-group">
               <label for="meeting-title">Meeting Title</label>
-              <input
-                type="text"
-                id="meeting-title"
-                placeholder="e.g. Quarterly Business Review with Acme Corp"
-              />
+              <input type="text" id="meeting-title" />
             </div>
             <div class="form-row">
               <div class="form-group">
@@ -100,16 +76,11 @@
               </div>
               <div class="form-group">
                 <label for="meeting-location">Location</label>
-                <input
-                  type="text"
-                  id="meeting-location"
-                  placeholder="e.g. Conference Room A or Zoom"
-                />
+                <input type="text" id="meeting-location" />
               </div>
             </div>
           </section>
 
-          <!-- Section 2: Background & Purpose -->
           <section class="form-section">
             <div class="section-header">
               <div class="step-number">2</div>
@@ -117,26 +88,18 @@
             </div>
             <div class="form-group">
               <label for="meeting-purpose">Why is this meeting held?</label>
-              <textarea
-                id="meeting-purpose"
-                rows="3"
-                placeholder="Describe the reason for this meeting"
-              ></textarea>
+              <textarea id="meeting-purpose" rows="3"></textarea>
             </div>
             <div class="form-group">
               <label for="meeting-aim">What do we aim to achieve?</label>
-              <textarea
-                id="meeting-aim"
-                rows="3"
-                placeholder="List the high-level objectives"
-              ></textarea>
+              <textarea id="meeting-aim" rows="3"></textarea>
             </div>
             <div class="form-group">
               <label for="communication-style"
                 >Preferred Communication Style</label
               >
               <select id="communication-style">
-                <option value="">Select communication style</option>
+                <option value="">Välj</option>
                 <option value="formal">Formal</option>
                 <option value="informal">Informal</option>
                 <option value="consultative">Consultative</option>
@@ -145,7 +108,6 @@
             </div>
           </section>
 
-          <!-- Section 3: Meeting Objectives -->
           <section class="form-section">
             <div class="section-header">
               <div class="step-number">3</div>
@@ -153,23 +115,14 @@
             </div>
             <div class="form-group">
               <label for="specific-goals">Specific Goals</label>
-              <textarea
-                id="specific-goals"
-                rows="3"
-                placeholder="List measurable objectives for this meeting"
-              ></textarea>
+              <textarea id="specific-goals" rows="3"></textarea>
             </div>
             <div class="form-group">
               <label for="priorities">Priorities & Possible Compromises</label>
-              <textarea
-                id="priorities"
-                rows="3"
-                placeholder="What must be achieved vs. what can be negotiated"
-              ></textarea>
+              <textarea id="priorities" rows="3"></textarea>
             </div>
           </section>
 
-          <!-- Section 4: Company Relationship & History -->
           <section class="form-section">
             <div class="section-header">
               <div class="step-number">4</div>
@@ -177,52 +130,26 @@
             </div>
             <div class="form-group">
               <label for="company-history">History with this company</label>
-              <textarea
-                id="company-history"
-                rows="3"
-                placeholder="Previous interactions, deals, or important context"
-              ></textarea>
+              <textarea id="company-history" rows="3"></textarea>
             </div>
             <div class="form-group">
               <label for="relationship-status"
                 >Current relationship status</label
               >
-              <textarea
-                id="relationship-status"
-                rows="3"
-                placeholder="Describe the current state of the relationship"
-              ></textarea>
+              <textarea id="relationship-status" rows="3"></textarea>
             </div>
             <div class="form-group">
               <label for="company-perception">General perception of us</label>
-              <textarea
-                id="company-perception"
-                rows="3"
-                placeholder="How does this company view our organization?"
-              ></textarea>
+              <textarea id="company-perception" rows="3"></textarea>
             </div>
           </section>
 
-          <!-- Section 5: Our Team Members -->
           <section class="form-section">
             <div class="section-header">
               <div class="step-number">5</div>
               <h2>Team Members</h2>
             </div>
             <div class="form-group">
-              <p class="section-description">
-                Add your participants, their roles, and responsibilities.
-              </p>
-              <div class="info-box">
-                <p>For each participant, provide:</p>
-                <ul>
-                  <li>Name</li>
-                  <li>Title</li>
-                  <li>Role in meeting</li>
-                </ul>
-              </div>
-            </div>
-            <div class="form-group">
               <div class="participant-table">
                 <div class="table-header">
                   <div>Name</div>
@@ -230,42 +157,25 @@
                   <div>Role</div>
                 </div>
                 <div class="table-row">
-                  <div><input type="text" placeholder="John Smith" /></div>
-                  <div><input type="text" placeholder="Sales Director" /></div>
-                  <div><input type="text" placeholder="Lead presenter" /></div>
+                  <div><input type="text" /></div>
+                  <div><input type="text" /></div>
+                  <div><input type="text" /></div>
                 </div>
                 <div class="table-row">
-                  <div><input type="text" placeholder="Add name" /></div>
-                  <div><input type="text" placeholder="Add title" /></div>
-                  <div><input type="text" placeholder="Add role" /></div>
+                  <div><input type="text" /></div>
+                  <div><input type="text" /></div>
+                  <div><input type="text" /></div>
                 </div>
               </div>
-              <button type="button" class="btn btn-outline add-participant">
-                <i class="fas fa-plus"></i> Add Team Member
-              </button>
             </div>
           </section>
 
-          <!-- Section 6: Counterpart Participants -->
           <section class="form-section">
             <div class="section-header">
               <div class="step-number">6</div>
               <h2>Counterpart Participants</h2>
             </div>
             <div class="form-group">
-              <div class="info-box">
-                <p>For each counterpart participant, provide:</p>
-                <ul>
-                  <li>Name</li>
-                  <li>Title</li>
-                  <li>Role in meeting</li>
-                  <li>Perception of our company</li>
-                  <li>Personality</li>
-                  <li>Decision-making authority</li>
-                </ul>
-              </div>
-            </div>
-            <div class="form-group">
               <div class="participant-table">
                 <div class="table-header">
                   <div>Name</div>
@@ -273,72 +183,48 @@
                   <div>Role</div>
                 </div>
                 <div class="table-row">
-                  <div><input type="text" placeholder="Alex Johnson" /></div>
-                  <div>
-                    <input type="text" placeholder="Procurement Manager" />
-                  </div>
-                  <div>
-                    <input type="text" placeholder="Primary decision maker" />
-                  </div>
+                  <div><input type="text" /></div>
+                  <div><input type="text" /></div>
+                  <div><input type="text" /></div>
                 </div>
                 <div class="table-row">
-                  <div><input type="text" placeholder="Add name" /></div>
-                  <div><input type="text" placeholder="Add title" /></div>
-                  <div><input type="text" placeholder="Add role" /></div>
+                  <div><input type="text" /></div>
+                  <div><input type="text" /></div>
+                  <div><input type="text" /></div>
                 </div>
               </div>
-              <button type="button" class="btn btn-outline add-participant">
-                <i class="fas fa-plus"></i> Add Counterpart
-              </button>
             </div>
           </section>
 
-          <!-- Section 7: Expected Questions -->
           <section class="form-section">
             <div class="section-header">
               <div class="step-number">7</div>
               <h2>Expected Questions</h2>
             </div>
             <div class="form-group">
-              <p class="section-description">
-                For each question, provide a prepared answer.
-              </p>
               <div class="question-pair">
                 <div class="form-group">
                   <label>Question</label>
-                  <input
-                    type="text"
-                    placeholder="What is your pricing structure?"
-                  />
+                  <input type="text" />
                 </div>
                 <div class="form-group">
                   <label>Suggested Answer</label>
-                  <textarea
-                    rows="2"
-                    placeholder="Our pricing is based on volume..."
-                  ></textarea>
+                  <textarea rows="2"></textarea>
                 </div>
               </div>
               <div class="question-pair">
                 <div class="form-group">
                   <label>Question</label>
-                  <input type="text" placeholder="Add expected question" />
+                  <input type="text" />
                 </div>
                 <div class="form-group">
                   <label>Suggested Answer</label>
-                  <textarea
-                    rows="2"
-                    placeholder="Add prepared answer"
-                  ></textarea>
+                  <textarea rows="2"></textarea>
                 </div>
               </div>
-              <button type="button" class="btn btn-outline">
-                <i class="fas fa-plus"></i> Add Question
-              </button>
             </div>
           </section>
 
-          <!-- Section 8: Additional Factors -->
           <section class="form-section">
             <div class="section-header">
               <div class="step-number">8</div>
@@ -346,90 +232,124 @@
             </div>
             <div class="form-group">
               <label for="competitors">Competitors</label>
-              <textarea
-                id="competitors"
-                rows="2"
-                placeholder="Relevant competitors in this deal"
-              ></textarea>
+              <textarea id="competitors" rows="2"></textarea>
             </div>
             <div class="form-group">
               <label for="internal-events">Internal Events</label>
-              <textarea
-                id="internal-events"
-                rows="2"
-                placeholder="Company events that might impact this meeting"
-              ></textarea>
+              <textarea id="internal-events" rows="2"></textarea>
             </div>
             <div class="form-group">
               <label for="external-events">External Events</label>
-              <textarea
-                id="external-events"
-                rows="2"
-                placeholder="Market conditions or other external factors"
-              ></textarea>
+              <textarea id="external-events" rows="2"></textarea>
             </div>
             <div class="form-group">
-              <label for="known-risks">Known Risks (optional)</label>
-              <textarea
-                id="known-risks"
-                rows="2"
-                placeholder="Potential risks to be aware of"
-              ></textarea>
+              <label for="known-risks">Known Risks</label>
+              <textarea id="known-risks" rows="2"></textarea>
             </div>
           </section>
-
-          <!-- Generate Button -->
-          <div class="generate-section">
-            <button type="submit" class="btn btn-primary btn-large">
-              Generate Meeting Plan
-            </button>
-          </div>
         </form>
       </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-logo">Meeting Prodigy</div>
-          <div class="footer-links">
-            <div class="link-group">
-              <h4>Product</h4>
-              <a href="#features">Features</a>
-              <a href="#pricing">Pricing</a>
-              <a href="#use-cases">Use Cases</a>
-            </div>
-            <div class="link-group">
-              <h4>Company</h4>
-              <a href="#about">About</a>
-              <a href="#careers">Careers</a>
-              <a href="#blog">Blog</a>
-            </div>
-            <div class="link-group">
-              <h4>Resources</h4>
-              <a href="#help">Help Center</a>
-              <a href="#privacy">Privacy Policy</a>
-              <a href="#terms">Terms of Service</a>
-            </div>
-          </div>
-          <div class="footer-social">
-            <a href="#linkedin" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-            <a href="#twitter" aria-label="Twitter"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="#github" aria-label="GitHub"
-              ><i class="fab fa-github"></i
-            ></a>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2023 Meeting Prodigy. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-    <script src="js/meeting-setup.js"></script>
+    <script>
+      let popupWindow;
+
+      function openVoiceRecording() {
+        popupWindow = window.open(
+          "2.1 Simulated_Recording.html",
+          "voiceRecordingWindow",
+          "width=900,height=800"
+        );
+        const poll = setInterval(() => {
+          if (popupWindow && popupWindow.closed) {
+            clearInterval(poll);
+            const stored = localStorage.getItem("simulatedMeetingData");
+            const timestamp = localStorage.getItem("simulatedMeetingTimestamp");
+            if (stored && timestamp) {
+              const now = Date.now();
+              const diff = now - Number(timestamp);
+              if (diff < 10000) {
+                const parsed = JSON.parse(stored);
+                populateMeetingFields(parsed);
+              }
+              localStorage.removeItem("simulatedMeetingData");
+              localStorage.removeItem("simulatedMeetingTimestamp");
+            }
+          }
+        }, 500);
+      }
+
+      function populateMeetingFields(data) {
+        if (!data) return;
+        if (data.title)
+          document.getElementById("meeting-title").value = data.title;
+        if (data.date)
+          document.getElementById("meeting-date").value = data.date;
+        if (data.location)
+          document.getElementById("meeting-location").value = data.location;
+        if (data.purpose)
+          document.getElementById("meeting-purpose").value = data.purpose;
+        if (data.aim) document.getElementById("meeting-aim").value = data.aim;
+        if (data.goals)
+          document.getElementById("specific-goals").value = data.goals;
+        if (data.priorities)
+          document.getElementById("priorities").value = data.priorities;
+        if (data.history)
+          document.getElementById("company-history").value = data.history;
+        if (data.relationship)
+          document.getElementById("relationship-status").value =
+            data.relationship;
+        if (data.perception)
+          document.getElementById("company-perception").value = data.perception;
+        if (data.competitors)
+          document.getElementById("competitors").value = data.competitors;
+        if (data.internalEvents)
+          document.getElementById("internal-events").value =
+            data.internalEvents;
+        if (data.externalEvents)
+          document.getElementById("external-events").value =
+            data.externalEvents;
+        if (data.risks)
+          document.getElementById("known-risks").value = data.risks;
+        if (data.communicationStyle)
+          document.getElementById("communication-style").value =
+            data.communicationStyle;
+
+        const ownRows = document.querySelectorAll(
+          ".form-section:nth-of-type(5) .table-row"
+        );
+        data.ownTeam?.forEach((p, i) => {
+          const inputs = ownRows[i]?.querySelectorAll("input");
+          if (inputs) {
+            if (p.name) inputs[0].value = p.name;
+            if (p.title) inputs[1].value = p.title;
+            if (p.role) inputs[2].value = p.role;
+          }
+        });
+
+        const counterpartRows = document.querySelectorAll(
+          ".form-section:nth-of-type(6) .table-row"
+        );
+        data.counterpartTeam?.forEach((p, i) => {
+          const inputs = counterpartRows[i]?.querySelectorAll("input");
+          if (inputs) {
+            if (p.name) inputs[0].value = p.name;
+            if (p.title) inputs[1].value = p.title;
+            if (p.role) inputs[2].value = p.role;
+          }
+        });
+
+        const qPairs = document.querySelectorAll(
+          ".form-section:nth-of-type(7) .question-pair"
+        );
+        data.expectedQuestions?.forEach((q, i) => {
+          const pair = qPairs[i]?.querySelectorAll("input, textarea");
+          if (pair) {
+            if (q.question) pair[0].value = q.question;
+            if (q.answer) pair[1].value = q.answer;
+          }
+        });
+      }
+    </script>
   </body>
 </html>

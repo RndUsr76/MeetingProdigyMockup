@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulerad Röstinspelning</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/meeting-setup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="setup-header">
+      <div class="container">
+        <h1>Simulerad Röstinspelning</h1>
+        <p class="subtitle">
+          Följ guiden nedan och tala in informationen om mötet medan du går
+          igenom sektionerna.
+        </p>
+      </div>
+    </header>
+
+    <main class="setup-container">
+      <div class="container">
+        <section class="form-section">
+          <div class="section-header">
+            <div class="step-number">1</div>
+            <h2>Starta inspelning</h2>
+          </div>
+          <div class="form-group">
+            <p>
+              Klicka på knappen nedan för att börja din inspelning. Tänk högt
+              genom varje sektion.
+            </p>
+            <button class="btn btn-primary" onclick="startRecording()">
+              <i class="fas fa-microphone"></i> Starta inspelning
+            </button>
+            <button
+              class="btn btn-secondary"
+              onclick="userClickedStop = true; stopRecording();"
+            >
+              <i class="fas fa-stop"></i> Avsluta inspelning
+            </button>
+            <div
+              class="recording"
+              id="recordingIndicator"
+              style="margin-top: 1rem; display: none"
+            >
+              <i class="fas fa-circle-notch fa-spin"></i> Inspelning pågår...
+            </div>
+          </div>
+        </section>
+
+        <section class="form-section">
+          <div class="section-header">
+            <div class="step-number">2</div>
+            <h2>Information att tala in</h2>
+          </div>
+          <div class="form-group">
+            <div class="info-box">
+              <h3>1. General Information</h3>
+              <ul>
+                <li><strong>Mötets titel</strong> – Vad heter mötet?</li>
+                <li><strong>Datum & Tid</strong> – När hålls mötet?</li>
+                <li>
+                  <strong>Plats</strong> – Fysisk plats eller digital länk
+                </li>
+              </ul>
+
+              <h3>2. Background & Purpose</h3>
+              <ul>
+                <li><strong>Syfte</strong> – Varför hålls detta möte?</li>
+                <li><strong>Mål</strong> – Vad vill vi uppnå?</li>
+                <li>
+                  <strong>Kommunikationsstil</strong> – T.ex. formell,
+                  informell, konsultativ
+                </li>
+              </ul>
+
+              <h3>3. Meeting Objectives</h3>
+              <ul>
+                <li>
+                  <strong>Specifika mål</strong> – Vad är konkreta och mätbara
+                  mål?
+                </li>
+                <li>
+                  <strong>Prioriteringar</strong> – Vad är viktigast, och vad
+                  kan vi kompromissa om?
+                </li>
+              </ul>
+
+              <h3>4. Company Relationship & History</h3>
+              <ul>
+                <li>
+                  <strong>Historik med företaget</strong> – Tidigare samarbete?
+                </li>
+                <li><strong>Nuvarande relation</strong> – Status idag</li>
+                <li>
+                  <strong>Hur ser de på oss?</strong> – Företagets bild av vår
+                  organisation
+                </li>
+              </ul>
+
+              <h3>5. Our Team</h3>
+              <ul>
+                <li>
+                  <strong>Namn, titel och roll</strong> för deltagarna i vårt
+                  team
+                </li>
+              </ul>
+
+              <h3>6. Counterpart Participants</h3>
+              <ul>
+                <li><strong>Namn, titel och roll</strong></li>
+                <li><strong>Beslutsmakt</strong> – Har de mandat?</li>
+                <li><strong>Personlighet</strong> – Relevant att känna till</li>
+              </ul>
+
+              <h3>7. Expected Questions</h3>
+              <ul>
+                <li>
+                  <strong>Förväntade frågor</strong> – Vad kan de tänkas fråga?
+                </li>
+                <li><strong>Våra svar</strong> – Vad ska vi svara?</li>
+              </ul>
+
+              <h3>8. Additional Factors</h3>
+              <ul>
+                <li>
+                  <strong>Konkurrenter</strong> – Vilka andra är aktuella?
+                </li>
+                <li>
+                  <strong>Interna händelser</strong> – Något som påverkar vårt
+                  läge?
+                </li>
+                <li>
+                  <strong>Externa faktorer</strong> – Marknad, bransch, politik,
+                  etc.
+                </li>
+                <li>
+                  <strong>Kända risker</strong> – Något vi bör flagga för redan
+                  nu?
+                </li>
+              </ul>
+
+              <p>
+                När du är klar, klicka på
+                <strong>"Avsluta inspelning"</strong> – systemet kommer att
+                analysera din input.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      let userClickedStop = false;
+
+      function startRecording() {
+        document.getElementById("recordingIndicator").style.display = "block";
+      }
+
+      function stopRecording() {
+        if (!userClickedStop) return;
+
+        document.getElementById("recordingIndicator").style.display = "none";
+
+        const simulatedText = {
+          title: "Kundmöte med Acme Corp",
+          date: "2025-04-15T10:00",
+          location: "Zoom",
+          purpose: "Diskutera pågående samarbete och kommande upphandling",
+          aim: "Få klarhet i nästa steg och nå enighet om kommande leveranser",
+          goals: "1. Identifiera krav\n2. Sätta tidsplan",
+          priorities:
+            "Vi måste få igenom steg 1 denna månad. Tidsplanen kan diskuteras.",
+          history: "Vi levererade ett pilotprojekt 2023.",
+          relationship: "Bra samarbete men vissa spänningar i supporten.",
+          perception:
+            "De ser oss som tekniskt starka men långsamma i leverans.",
+          ownTeam: [
+            { name: "Anna Andersson", title: "KAM", role: "Presentatör" },
+          ],
+          counterpartTeam: [
+            {
+              name: "Karl Nilsson",
+              title: "Inköpschef",
+              role: "Beslutsfattare",
+            },
+          ],
+          expectedQuestions: [
+            {
+              question: "Vad är leveranstiden?",
+              answer: "Cirka 6 månader efter signering.",
+            },
+          ],
+          competitors: "Volvo Autonomous, Hexagon",
+          internalEvents: "Resursbrist i Q2",
+          externalEvents: "Ny lagstiftning om säkerhet i gruvor",
+          risks: "Försenad klartecken från ledning",
+        };
+
+        localStorage.setItem(
+          "simulatedMeetingData",
+          JSON.stringify(simulatedText)
+        );
+        localStorage.setItem(
+          "simulatedMeetingTimestamp",
+          Date.now().toString()
+        );
+
+        window.close();
+      }
+    </script>
+  </body>
+</html>
